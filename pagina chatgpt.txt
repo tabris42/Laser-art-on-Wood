@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Laser Art on Wood | Catálogo</title>
+
+  <style>
+    :root{
+      --bg:#f4f6f8;
+      --card:#ffffff;
+      --card-soft:#f9fafb;
+
+      --text:#1f2937;
+      --muted:#6b7280;
+
+      --line:#e5e7eb;
+
+      --accent:#2563eb;
+      --accent2:#16a34a;
+      --good:#22c55e;
+      --warn:#eab308;
+      --bad:#ef4444;
+
+      --shadow: 0 10px 25px rgba(0,0,0,.08);
+
+      --radius:18px;
+      --radius2:14px;
+
+      --max:1100px;
+      --pad:18px;
+
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", sans-serif;
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family:var(--font);
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 20% 0%, rgba(37,99,235,.08), transparent 55%),
+        radial-gradient(900px 500px at 80% 10%, rgba(22,163,74,.08), transparent 50%),
+        var(--bg);
+    }
+
+    a{text-decoration:none;color:inherit}
+
+    .wrap{max-width:var(--max);margin:auto;padding:24px}
+
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:24px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .logo{
+      width:42px;
+      height:42px;
+      border-radius:12px;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+    }
+
+    nav a{
+      margin-left:14px;
+      padding:8px 14px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:var(--card);
+      font-size:14px;
+    }
+
+    nav a:hover{
+      background:var(--accent);
+      color:white;
+    }
+
+    .hero{
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:28px;
+      margin-bottom:32px;
+    }
+
+    .hero h1{margin-top:0}
+
+    .pill{
+      display:inline-block;
+      padding:6px 12px;
+      border-radius:999px;
+      background:var(--card-soft);
+      border:1px solid var(--line);
+      font-size:13px;
+      margin-right:8px;
+      margin-top:8px;
+    }
+
+    .section-title{
+      margin:40px 0 16px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:18px;
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius2);
+      padding:18px;
+      box-shadow:var(--shadow);
+    }
+
+    .card h3{margin-top:0}
+
+    footer{
+      margin-top:40px;
+      padding:24px;
+      text-align:center;
+      font-size:14px;
+      color:var(--muted);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <header>
+      <div class="brand">
+        <div class="logo"></div>
+        <div>
+          <strong>Laser Art on Wood</strong><br>
+          <small>Corte y grabado láser en madera</small>
+        </div>
+      </div>
+      <nav>
+        <a href="#categorias">Categorías</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h1>Catálogo de productos en madera (corte láser)</h1>
+      <p>
+        Aquí puedes ver mis trabajos: desde cortes simples (1 capa) hasta
+        productos multicapa, armables y personalizados.
+      </p>
+      <span class="pill">Corte plano (1 capa)</span>
+      <span class="pill">Multicapa</span>
+      <span class="pill">Personalizado</span>
+    </section>
+
+    <section id="categorias">
+      <div class="section-title">
+        <h2>Categorías principales</h2>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Decoración en madera</h3>
+          <p>Pesebres, adornos, centros de mesa y decoración por temporada.</p>
+        </div>
+        <div class="card">
+          <h3>Iluminación decorativa</h3>
+          <p>Portavelas y diseños calados con luz cálida.</p>
+        </div>
+        <div class="card">
+          <h3>Organizadores y cajas</h3>
+          <p>Cajas, estuches y organizadores funcionales.</p>
+        </div>
+        <div class="card">
+          <h3>Figuras armables / 3D</h3>
+          <p>Barcos, modelos armables y proyectos complejos.</p>
+        </div>
+        <div class="card">
+          <h3>Regalos personalizados</h3>
+          <p>Nombres, fechas y diseños por encargo.</p>
+        </div>
+        <div class="card">
+          <h3>Arte y cultura pop</h3>
+          <p>Cuadros multicapa, anime y cultura geek.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="catalogo">
+      <div class="section-title">
+        <h2>Catálogo (ejemplo)</h2>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Pesebre multicapa</h3>
+          <p>Decoración navideña en madera.</p>
+          <strong>Desde $XX.XXX</strong>
+        </div>
+        <div class="card">
+          <h3>Caja organizadora</h3>
+          <p>Caja armable para regalos.</p>
+          <strong>Desde $X.XXX</strong>
+        </div>
+        <div class="card">
+          <h3>Figura armable 3D</h3>
+          <p>Modelo decorativo tipo barco.</p>
+          <strong>A pedido</strong>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <div class="section-title">
+        <h2>Contacto</h2>
+      </div>
+      <p>
+        Escríbeme para cotizaciones o pedidos personalizados.
+      </p>
+      <p>
+        📱 WhatsApp: +56 9 XXXXXXXX<br>
+        📸 Instagram: @tu_usuario
+      </p>
+    </section>
+
+    <footer>
+      Laser Art on Wood · Catálogo HTML para GitHub Pages
+    </footer>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Regalos Personalizados | Laser Art</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg: #f4f6f8; --card: #ffffff; --text: #1f2937; --muted: #6b7280; --line: #e5e7eb; --accent: #2563eb; --radius: 18px; --font: ui-sans-serif, system-ui, sans-serif; --font-title: 'Montserrat', sans-serif; }
+    * { box-sizing: border-box; } body { margin: 0; font-family: var(--font); color: var(--text); background: radial-gradient(at 20% 0%, rgba(37, 99, 235, .08), transparent 55%), var(--bg); }
+    a { text-decoration: none; color: inherit; } .wrap { max-width: 1100px; margin: auto; padding: 24px; }
+    header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; border-bottom: 1px solid var(--line); padding-bottom: 20px; }
+    .brand { display: flex; align-items: center; gap: 12px; } .logo { width: 60px; height: 60px; border-radius: 10px; object-fit: cover; }
+    .brand small { font-family: var(--font-title); font-weight: 500; } nav a { margin-left: 10px; padding: 6px 12px; font-family: var(--font-title); font-weight: 600; color: var(--muted); } nav a:hover { color: var(--accent); }
+    .page-header { margin-bottom: 40px; text-align: center; } .page-header h1 { font-family: var(--font-title); font-weight: 700; font-size: 2.5rem; margin-bottom: 10px; }
+    .grid-products { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 24px; }
+    .product-card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s; }
+    .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+    .product-img-wrap { height: 200px; background: #e5e7eb; overflow: hidden; } .product-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .product-info { padding: 16px; flex-grow: 1; display: flex; flex-direction: column; }
+    .product-title { font-family: var(--font-title); font-weight: 600; margin: 0 0 8px; } .product-desc { font-size: 0.9rem; color: var(--muted); margin-bottom: 16px; flex-grow: 1; }
+    .product-price { font-family: var(--font-title); font-weight: 700; color: var(--accent); font-size: 1.2rem; margin-top: auto; }
+    footer { margin-top: 60px; padding: 24px; text-align: center; font-size: 14px; color: var(--muted); border-top: 1px solid var(--line); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand"><img src="logo.png" class="logo"><div><strong style="font-family: var(--font-title);">Laser Art on Wood</strong><br><small>Personalizados</small></div></div>
+      <nav><a href="index.html">Inicio</a><a href="index.html#categorias">Categorías</a><a href="#contacto">Contacto</a></nav>
+    </header>
+    <main>
+      <div class="page-header"><h1>Regalos Personalizados</h1><p style="color:var(--muted)">Detalles únicos grabados con amor.</p></div>
+      <div class="grid-products">
+        <div class="product-card"><div class="product-img-wrap"><img src="https://placehold.co/400?text=Llaveros" alt="Llaveros"></div><div class="product-info"><h3 class="product-title">Llaveros con Nombre</h3><p class="product-desc">Pack de souvenirs para cumpleaños o eventos.</p><span class="product-price">$2.500 c/u</span></div></div>
+        <div class="product-card"><div class="product-img-wrap"><img src="https://placehold.co/400?text=Tabla+Picar" alt="Tabla"></div><div class="product-info"><h3 class="product-title">Tabla de Picar Grabada</h3><p class="product-desc">Diseño "Rey de la Parrilla" o apellido familiar.</p><span class="product-price">$18.000</span></div></div>
+        <div class="product-card"><div class="product-img-wrap"><img src="https://placehold.co/400?text=Portaretrato" alt="Portaretrato"></div><div class="product-info"><h3 class="product-title">Marco "Te Amo Papá"</h3><p class="product-desc">Portaretrato con mensaje personalizado en el borde.</p><span class="product-price">$12.000</span></div></div>
+        <div class="product-card"><div class="product-img-wrap"><img src="https://placehold.co/400?text=Cake+Topper" alt="Topper"></div><div class="product-info"><h3 class="product-title">Cake Topper Cumpleaños</h3><p class="product-desc">Nombre y edad en madera dorada o natural.</p><span class="product-price">$5.000</span></div></div>
+        <div class="product-card"><div class="product-img-wrap"><img src="https://placehold.co/400?text=Cuadro+Bebe" alt="Bebe"></div><div class="product-info"><h3 class="product-title">Cuadro Natalicio Bebé</h3><p class="product-desc">Datos de nacimiento (peso, hora, fecha) grabados.</p><span class="product-price">$20.000</span></div></div>
+        <div class="product-card"><div class="product-img-wrap"><img src="https://placehold.co/400?text=Imanes" alt="Imanes"></div><div class="product-info"><h3 class="product-title">Imanes Personalizados (x5)</h3><p class="product-desc">Fotos o frases grabadas en madera magnética.</p><span class="product-price">$8.000</span></div></div>
+        <div class="product-card"><div class="product-img-wrap"><img src="https://placehold.co/400?text=Spotify" alt="Spotify"></div><div class="product-info"><h3 class="product-title">Placa Canción Spotify</h3><p class="product-desc">Código escaneable de tu canción favorita.</p><span class="product-price">$10.000</span></div></div>
+        <div class="product-card"><div class="product-img-wrap"><img src="https://placehold.co/400?text=Medalla+Perro" alt="Mascota"></div><div class="product-info"><h3 class="product-title">Medalla Mascota</h3><p class="product-desc">Huesito con nombre y teléfono de contacto.</p><span class="product-price">$3.500</span></div></div>
+        <div class="product-card"><div class="product-img-wrap"><img src="https://placehold.co/400?text=Marcador" alt="Libro"></div><div class="product-info"><h3 class="product-title">Marcador de Libros</h3><p class="product-desc">Diseño calado con frase inspiradora.</p><span class="product-price">$3.000</span></div></div>
+        <div class="product-card"><div class="product-img-wrap"><img src="https://placehold.co/400?text=Caja+Regalo" alt="Caja"></div><div class="product-info"><h3 class="product-title">Caja Regalo Dedicatoria</h3><p class="product-desc">Caja de madera con mensaje grabado en la tapa.</p><span class="product-price">$9.000</span></div></div>
+      </div>
+    </main>
+    <footer>Laser Art on Wood · Catálogo Web</footer>
+  </div>
+</body>
+</html>

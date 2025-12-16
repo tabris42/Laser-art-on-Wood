@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Laser Art on Wood | Decoración</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* --- Variables (Mismos estilos que el index) --- */
+    :root {
+      --bg: #f4f6f8;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --accent: #2563eb;
+      --shadow: 0 10px 25px rgba(0, 0, 0, .08);
+      --radius: 18px;
+      --radius2: 14px;
+      --max: 1100px;
+      --font: ui-sans-serif, system-ui, -apple-system, sans-serif;
+      --font-title: 'Montserrat', sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; font-family: var(--font); color: var(--text);
+      background: radial-gradient(at 20% 0%, rgba(37, 99, 235, .08), transparent 55%), var(--bg);
+    }
+    a { text-decoration: none; color: inherit; }
+    .wrap { max-width: var(--max); margin: auto; padding: 24px; }
+
+    /* --- Header --- */
+    header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; border-bottom: 1px solid var(--line); padding-bottom: 20px; }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .logo { width: 60px; height: 60px; border-radius: 10px; object-fit: cover; display: block; }
+    .brand small { font-family: var(--font-title); font-weight: 500; }
+    nav a { margin-left: 10px; padding: 6px 12px; border-radius: 999px; font-size: 14px; font-family: var(--font-title); font-weight: 600; color: var(--muted); transition: all 0.2s ease; }
+    nav a:hover, nav a.active { color: var(--accent); }
+
+    /* --- Títulos de Página --- */
+    .page-header { margin-bottom: 40px; text-align: center; }
+    .page-header h1 { font-family: var(--font-title); font-weight: 700; font-size: 2.5rem; margin-bottom: 10px; color: var(--text); }
+    .page-breadcrumb { color: var(--muted); font-size: 0.9rem; }
+    .page-breadcrumb a:hover { text-decoration: underline; }
+
+    /* --- Grid de Productos --- */
+    .grid-products { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 24px; }
+
+    /* --- Tarjeta de Producto Simple --- */
+    .product-card {
+      background: var(--card); border: 1px solid var(--line); border-radius: var(--radius2);
+      overflow: hidden; transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex; flex-direction: column;
+    }
+    .product-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0, 0, 0, .1); }
+    .product-img-wrap { height: 200px; background: #e5e7eb; overflow: hidden; }
+    .product-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
+    .product-card:hover .product-img-wrap img { transform: scale(1.05); }
+    .product-info { padding: 16px; flex-grow: 1; display: flex; flex-direction: column; }
+    .product-title { font-family: var(--font-title); font-weight: 600; font-size: 1.1rem; margin: 0 0 8px; }
+    .product-desc { font-size: 0.9rem; color: var(--muted); margin: 0 0 16px; flex-grow: 1; }
+    .product-price { font-family: var(--font-title); font-weight: 700; color: var(--accent); font-size: 1.2rem; display: block; margin-top: auto; }
+
+    footer { margin-top: 60px; padding: 24px; text-align: center; font-size: 14px; color: var(--muted); border-top: 1px solid var(--line); }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <header>
+      <div class="brand">
+        <img src="logo.png" alt="Logo Laser Art" class="logo">
+        <div>
+          <strong style="font-size: 1.1rem; font-family: var(--font-title);">Laser Art on Wood</strong><br>
+          <small>Corte y grabado láser en madera</small>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html">Inicio</a>
+        <a href="index.html#categorias">Categorías</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="page-header">
+        <div class="page-breadcrumb">
+          <a href="index.html">Inicio</a> / Categorías /
+        </div>
+        <h1>Decoración en Madera</h1>
+        <p style="color: var(--muted); max-width: 600px; margin: auto;">
+          Dale calidez a tus espacios con piezas únicas cortadas con precisión láser. Desde centros de mesa hasta murales geométricos.
+        </p>
+      </div>
+
+      <div class="grid-products">
+
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="./pesebre.png" alt="Pesebre">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Pesebre</h3>
+            <p class="product-desc">Set de 10 piezas en madera (mdf) tamaño 19x15x14 cm.</p>
+            <span class="product-price">$8.000</span>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="./arbol.png">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Árbol de la vida</h3>
+            <p class="product-desc">Arbol de la vida + soporte 20 x 20 cm.</p>
+            <span class="product-price">$3000</span>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="./posavaso_mandala.png">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Set Portavasos Mandala (x6)</h3>
+            <p class="product-desc">seis diseños de mandala 9x9 cm.</p>
+            <span class="product-price">$5.000</span>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="https://placehold.co/400x400/e2e8f0/1e293b?text=Centro+Reno" alt="Centro de Mesa Reno">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Centro de Mesa "Reno Nórdico"</h3>
+            <p class="product-desc">Figura ensamblable 3D, ideal para decoración navideña.</p>
+            <span class="product-price">$12.500</span>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="https://placehold.co/400x400/e2e8f0/1e293b?text=Letrero+Hola" alt="Letrero Recibidor">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Letrero de Bienvenida "HOLA"</h3>
+            <p class="product-desc">Letras corpóreas en relieve con base de madera oscura para recibidor.</p>
+            <span class="product-price">$18.000</span>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="https://placehold.co/400x400/e2e8f0/1e293b?text=Reloj+Pared" alt="Reloj Minimalista">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Reloj de Pared Hexagonal</h3>
+            <p class="product-desc">Diseño geométrico silencioso. No incluye pilas.</p>
+            <span class="product-price">$28.000</span>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="https://placehold.co/400x400/e2e8f0/1e293b?text=Adornos+Navidad" alt="Set Adornos">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Adornos Colgantes (Set x12)</h3>
+            <p class="product-desc">Copos de nieve y figuras navideñas surtidas para el árbol.</p>
+            <span class="product-price">$9.990</span>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="https://placehold.co/400x400/e2e8f0/1e293b?text=Porta+Velas" alt="Porta Velas">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Porta-velas "Flor de Loto"</h3>
+            <p class="product-desc">Diseño multicapa que crea sombras relajantes con velas LED.</p>
+            <span class="product-price">$14.500</span>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="https://placehold.co/400x400/e2e8f0/1e293b?text=Mapa+Mundo" alt="Mapa Mundi">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Mapa del Mundo Multicapa</h3>
+            <p class="product-desc">Gran formato (80x50cm), 3 capas de madera con diferentes tonos.</p>
+            <span class="product-price">$55.000</span>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="https://placehold.co/400x400/e2e8f0/1e293b?text=Florero+Seco" alt="Florero Minimalista">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Florero Minimalista de Madera</h3>
+            <p class="product-desc">Estructura de corte láser con tubo de ensayo de vidrio para flores secas.</p>
+            <span class="product-price">$16.000</span>
+          </div>
+        </div>
+
+      </div> </main>
+
+    <footer id="contacto">
+      Laser Art on Wood · Catálogo Web 2023
+    </footer>
+
+  </div>
+</body>
+</html>

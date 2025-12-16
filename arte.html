@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arte y Cultura Pop | Laser Art</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg: #f4f6f8; --card: #ffffff; --text: #1f2937; --muted: #6b7280; --line: #e5e7eb; --accent: #2563eb; --radius: 18px; --font: ui-sans-serif, system-ui, sans-serif; --font-title: 'Montserrat', sans-serif; }
+    * { box-sizing: border-box; } body { margin: 0; font-family: var(--font); color: var(--text); background: radial-gradient(at 20% 0%, rgba(37, 99, 235, .08), transparent 55%), var(--bg); }
+    a { text-decoration: none; color: inherit; } .wrap { max-width: 1100px; margin: auto; padding: 24px; }
+    header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; border-bottom: 1px solid var(--line); padding-bottom: 20px; }
+    .brand { display: flex; align-items: center; gap: 12px; } .logo { width: 60px; height: 60px; border-radius: 10px; object-fit: cover; }
+    .brand small { font-family: var(--font-title); font-weight: 500; } nav a { margin-left: 10px; padding: 6px 12px; font-family: var(--font-title); font-weight: 600; color: var(--muted); } nav a:hover { color: var(--accent); }
+    .page-header { margin-bottom: 40px; text-align: center; } .page-header h1 { font-family: var(--font-title); font-weight: 700; font-size: 2.5rem; margin-bottom: 10px; }
+    .grid-products { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 24px; }
+    .product-card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s; }
+    .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+    .product-img-wrap { height: 200px; background: #e5e7eb; overflow: hidden; } .product-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .product-info { padding: 16px; flex-grow: 1; display: flex; flex-direction: column; }
+    .product-title { font-family: var(--font-title); font-weight: 600; margin: 0 0 8px; } .product-desc { font-size: 0.9rem; color: var(--muted); margin-bottom: 16px; flex-grow: 1; }
+    .product-price { font-family: var(--font-title); font-weight: 700; color: var(--accent); font-size: 1.2rem; margin-top: auto; }
+    footer { margin-top: 60px; padding: 24px; text-align: center; font-size: 14px; color: var(--muted); border-top: 1px solid var(--line); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand"><img src="logo.png" class="logo"><div><strong style="font-family: var(--font-title);">Laser Art on Wood</strong><br><small>Arte Geek</small></div></div>
+      <nav><a href="index.html">Inicio</a><a href="index.html#categorias">Categorías</a><a href="#contacto">Contacto</a></nav>
+    </header>
+    <main>
+      <div class="page-header"><h1>Arte y Cultura Pop</h1><p style="color:var(--muted)">Cuadros multicapa y tributos a tus series favoritas.</p></div>
+      <div class="grid-products">
+        <div class="product-card"><div class="product-img-wrap"><img src="https://placehold.co/400?text=Mandala" alt="Mandala"></div><div class="product-info"><h3 class="product-title">Mandala Flor de Loto</h3><p class="product-desc">Arte de pared de 7 capas con efecto profundidad.</p><span class="product-price">$45.000</span></div></div>
+        <div class="product-card"><div class="product-img-wrap"><img src="https://placehold.co/400?text=Star+Wars" alt="SW"></div><div class="product-info"><h3 class="product-title">Emblema Alianza Rebelde</h3><p class="product-desc">Diseño tribal inspirado en Star Wars.</p><span class="product-price">$25.000</span></div></div>
+        <div class="product-card"><div class="product-img-wrap"><img src="https://placehold.co/400?text=Tierra+Media" alt="Mapa"></div><div class="product-info"><h3 class="product-title">Mapa Tierra Media</h3><p class="product-desc">Grabado de alta resolución estilo antiguo.</p><span class="product-price">$30.000</span></div></div>
+        <div class="product-card"><div class="product-img-wrap"><img src="https://placehold.co/400?text=Totoro" alt="Totoro"></div><div class="product-info"><h3 class="product-title">Totoro Multicapa</h3><p class="product-desc">Escena del bosque con relieve 3D.</p><span class="product-price">$22.000</span></div></div>
+        <div class="product-card"><div class="product-img-wrap"><img src="https://placehold.co/400?text=Hogwarts" alt="HP"></div><div class="product-info"><h3 class="product-title">Escudo Escuela de Magia</h3><p class="product-desc">Las 4 casas en un diseño detallado.</p><span class="product-price">$28.000</span></div></div>
+        <div class="product-card"><div class="product-img-wrap"><img src="https://placehold.co/400?text=Lobo" alt="Lobo"></div><div class="product-info"><h3 class="product-title">Retrato Geométrico Lobo</h3><p class="product-desc">Estilo low-poly para decoración moderna.</p><span class="product-price">$18.000</span></div></div>
+        <div class="product-card"><div class="product-img-wrap"><img src="https://placehold.co/400?text=Marvel" alt="Marvel"></div><div class="product-info"><h3 class="product-title">Logo Superhéroes</h3><p class="product-desc">Colección de posavasos temáticos.</p><span class="product-price">$15.000</span></div></div>
+        <div class="product-card"><div class="product-img-wrap"><img src="https://placehold.co/400?text=Zodiaco" alt="Zodiaco"></div><div class="product-info"><h3 class="product-title">Signo Zodiacal</h3><p class="product-desc">Tu constelación y símbolo en madera.</p><span class="product-price">$12.000</span></div></div>
+        <div class="product-card"><div class="product-img-wrap"><img src="https://placehold.co/400?text=Gran+Ola" alt="Ola"></div><div class="product-info"><h3 class="product-title">La Gran Ola (Kanagawa)</h3><p class="product-desc">Versión multicapa del clásico japonés.</p><span class="product-price">$40.000</span></div></div>
+        <div class="product-card"><div class="product-img-wrap"><img src="https://placehold.co/400?text=Samurai" alt="Samurai"></div><div class="product-info"><h3 class="product-title">Máscara Samurai Oni</h3><p class="product-desc">Arte de pared impactante.</p><span class="product-price">$35.000</span></div></div>
+      </div>
+    </main>
+    <footer>Laser Art on Wood · Catálogo Web</footer>
+  </div>
+</body>
+</html>
