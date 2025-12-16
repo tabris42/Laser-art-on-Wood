@@ -34,8 +34,7 @@
     .wrap { max-width: var(--max); margin: auto; padding: 24px; }
 
     /* --- Header --- */
-    header { display: flex; justify-content: space-between; align-items: center;
-    margin-bottom: 40px; border-bottom: 1px solid var(--line); padding-bottom: 20px; }
+    header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; border-bottom: 1px solid var(--line); padding-bottom: 20px; }
     .brand { display: flex; align-items: center; gap: 12px; }
     .logo { width: 60px; height: 60px; border-radius: 10px; object-fit: cover; display: block; }
     .brand small { font-family: var(--font-title); font-weight: 500; }
@@ -70,11 +69,12 @@
     }
     
     .product-img-wrap img { 
-      width: 100%; 
+      width: 100%;
       height: 100%; 
-      object-fit: cover; /* Por defecto llenan el cuadro */
+      object-fit: cover; 
       object-position: center;
       transition: transform 0.3s ease; 
+      cursor: zoom-in; /* Cursor de lupa */
     }
 
     .product-card:hover .product-img-wrap img { transform: scale(1.05); }
@@ -84,6 +84,27 @@
     .product-price { font-family: var(--font-title); font-weight: 700; color: var(--accent); font-size: 1.2rem; display: block; margin-top: auto; }
 
     footer { margin-top: 60px; padding: 24px; text-align: center; font-size: 14px; color: var(--muted); border-top: 1px solid var(--line); }
+
+    /* --- NUEVO: Estilos para el Visor (Lightbox) --- */
+    #visor {
+      display: none; /* Oculto por defecto */
+      position: fixed;
+      z-index: 9999;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.85); /* Fondo oscuro */
+      justify-content: center;
+      align-items: center;
+      cursor: zoom-out;
+    }
+    #visor img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      animation: aparecer 0.3s ease;
+    }
+    @keyframes aparecer { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
   </style>
 </head>
 
@@ -197,7 +218,7 @@
 
         <div class="product-card">
           <div class="product-img-wrap">
-            <img src="multicapa_gato.png">
+             <img src="multicapa_gato.png">
           </div>
           <div class="product-info">
             <h3 class="product-title">Recuerdo Gato</h3>
@@ -236,5 +257,30 @@
     </footer>
 
   </div>
+
+  <div id="visor" onclick="cerrarVisor()">
+    <img id="imagenGrande" src="" onclick="event.stopPropagation()">
+  </div>
+
+  <script>
+    // Seleccionar todas las imágenes dentro de las tarjetas
+    const imagenes = document.querySelectorAll('.product-img-wrap img');
+    const visor = document.getElementById('visor');
+    const imagenGrande = document.getElementById('imagenGrande');
+
+    // Asignar evento de click a cada imagen
+    imagenes.forEach(img => {
+      img.addEventListener('click', () => {
+        visor.style.display = 'flex'; // Mostrar visor
+        imagenGrande.src = img.src;   // Poner la misma foto
+      });
+    });
+
+    // Función para cerrar
+    function cerrarVisor() {
+      visor.style.display = 'none';
+    }
+  </script>
+
 </body>
 </html>
