@@ -3,48 +3,281 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Figuras Armables / 3D | Laser Art</title>
+  <title>Laser Art on Wood | Figuras Armables / 3D</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
-    :root { --bg: #f4f6f8; --card: #ffffff; --text: #1f2937; --muted: #6b7280; --line: #e5e7eb; --accent: #2563eb; --radius: 18px; --font: ui-sans-serif, system-ui, sans-serif; --font-title: 'Montserrat', sans-serif; }
-    * { box-sizing: border-box; } body { margin: 0; font-family: var(--font); color: var(--text); background: radial-gradient(at 20% 0%, rgba(37, 99, 235, .08), transparent 55%), var(--bg); }
-    a { text-decoration: none; color: inherit; } .wrap { max-width: 1100px; margin: auto; padding: 24px; }
+    /* --- COPIA EXACTA DE ESTILOS DE DECORACION.HTML --- */
+    :root {
+      --bg: #f4f6f8;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --accent: #2563eb;
+      --shadow: 0 10px 25px rgba(0, 0, 0, .08);
+      --radius: 18px;
+      --radius2: 14px;
+      --max: 1100px;
+      --font: ui-sans-serif, system-ui, -apple-system, sans-serif;
+      --font-title: 'Montserrat', sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; font-family: var(--font); color: var(--text);
+      background: radial-gradient(at 20% 0%, rgba(37, 99, 235, .08), transparent 55%), var(--bg);
+    }
+    a { text-decoration: none; color: inherit; }
+    .wrap { max-width: var(--max); margin: auto; padding: 24px; }
+
+    /* --- Header --- */
     header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; border-bottom: 1px solid var(--line); padding-bottom: 20px; }
-    .brand { display: flex; align-items: center; gap: 12px; } .logo { width: 60px; height: 60px; border-radius: 10px; object-fit: cover; }
-    .brand small { font-family: var(--font-title); font-weight: 500; } nav a { margin-left: 10px; padding: 6px 12px; font-family: var(--font-title); font-weight: 600; color: var(--muted); } nav a:hover { color: var(--accent); }
-    .page-header { margin-bottom: 40px; text-align: center; } .page-header h1 { font-family: var(--font-title); font-weight: 700; font-size: 2.5rem; margin-bottom: 10px; }
-    .grid-products { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 24px; }
-    .product-card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s; }
-    .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-    .product-img-wrap { height: 200px; background: #e5e7eb; overflow: hidden; } .product-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .logo { width: 60px; height: 60px; border-radius: 10px; object-fit: cover; display: block; }
+    .brand small { font-family: var(--font-title); font-weight: 500; }
+    nav a { margin-left: 10px; padding: 6px 12px; border-radius: 999px; font-size: 14px; font-family: var(--font-title); font-weight: 600; color: var(--muted); transition: all 0.2s ease; }
+    nav a:hover, nav a.active { color: var(--accent); }
+
+    /* --- Títulos de Página --- */
+    .page-header { margin-bottom: 40px; text-align: center; }
+    .page-header h1 { font-family: var(--font-title); font-weight: 700; font-size: 2.5rem; margin-bottom: 10px; color: var(--text); }
+    .page-breadcrumb { color: var(--muted); font-size: 0.9rem; }
+    .page-breadcrumb a:hover { text-decoration: underline; }
+
+    /* --- Grid de Productos --- */
+    .grid-products { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 24px; }
+
+    /* --- Tarjeta de Producto --- */
+    .product-card {
+      background: var(--card);
+      border: 1px solid var(--line); border-radius: var(--radius2);
+      overflow: hidden; transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex; flex-direction: column;
+    }
+    .product-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0, 0, 0, .1); }
+    
+    /* Configuración GLOBAL de la imagen */
+    .product-img-wrap { 
+      width: 100%;
+      aspect-ratio: 1 / 1; /* AQUÍ ESTÁ LA CLAVE: OBLIGA A SER CUADRADO */
+      background: #e5e7eb; 
+      overflow: hidden; 
+      position: relative;
+    }
+    
+    .product-img-wrap img { 
+      width: 100%;
+      height: 100%; 
+      object-fit: cover; 
+      object-position: center;
+      transition: transform 0.3s ease; 
+      cursor: zoom-in;
+    }
+
+    .product-card:hover .product-img-wrap img { transform: scale(1.05); }
     .product-info { padding: 16px; flex-grow: 1; display: flex; flex-direction: column; }
-    .product-title { font-family: var(--font-title); font-weight: 600; margin: 0 0 8px; } .product-desc { font-size: 0.9rem; color: var(--muted); margin-bottom: 16px; flex-grow: 1; }
-    .product-price { font-family: var(--font-title); font-weight: 700; color: var(--accent); font-size: 1.2rem; margin-top: auto; }
+    .product-title { font-family: var(--font-title); font-weight: 600; font-size: 1.1rem; margin: 0 0 8px; }
+    .product-desc { font-size: 0.9rem; color: var(--muted); margin: 0 0 16px; flex-grow: 1; }
+    .product-price { font-family: var(--font-title); font-weight: 700; color: var(--accent); font-size: 1.2rem; display: block; margin-top: auto; }
+
     footer { margin-top: 60px; padding: 24px; text-align: center; font-size: 14px; color: var(--muted); border-top: 1px solid var(--line); }
+
+    /* --- Visor (Lightbox) --- */
+    #visor {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.85);
+      justify-content: center;
+      align-items: center;
+      cursor: zoom-out;
+    }
+    #visor img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      animation: aparecer 0.3s ease;
+    }
+    @keyframes aparecer { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
   </style>
 </head>
+
 <body>
   <div class="wrap">
+
     <header>
-      <div class="brand"><img src="logo.png" class="logo"><div><strong style="font-family: var(--font-title);">Laser Art on Wood</strong><br><small>Figuras 3D</small></div></div>
-      <nav><a href="index.html">Inicio</a><a href="index.html#categorias">Categorías</a><a href="#contacto">Contacto</a></nav>
-    </header>
-    <main>
-      <div class="page-header"><h1>Figuras Armables / 3D</h1><p style="color:var(--muted)">Puzzles y maquetas de alta precisión.</p></div>
-      <div class="grid-products">
-        <div class="product-card"><div class="product-img-wrap"><img src="https://placehold.co/400?text=Barco" alt="Barco"></div><div class="product-info"><h3 class="product-title">Barco Pirata (Avanzado)</h3><p class="product-desc">Modelo complejo con velas de madera flexible.</p><span class="product-price">$35.000</span></div></div>
-        <div class="product-card"><div class="product-img-wrap"><img src="https://placehold.co/400?text=Dinosaurio" alt="Dino"></div><div class="product-info"><h3 class="product-title">Esqueleto T-Rex</h3><p class="product-desc">Puzzle 3D educativo, ideal para niños y fans.</p><span class="product-price">$15.000</span></div></div>
-        <div class="product-card"><div class="product-img-wrap"><img src="https://placehold.co/400?text=Torre+Eiffel" alt="Torre"></div><div class="product-info"><h3 class="product-title">Torre Eiffel (50cm)</h3><p class="product-desc">Réplica detallada de la estructura parisina.</p><span class="product-price">$20.000</span></div></div>
-        <div class="product-card"><div class="product-img-wrap"><img src="https://placehold.co/400?text=Auto+Clasico" alt="Auto"></div><div class="product-info"><h3 class="product-title">Auto Clásico Retro</h3><p class="product-desc">Modelo tipo Ford T con ruedas giratorias.</p><span class="product-price">$18.000</span></div></div>
-        <div class="product-card"><div class="product-img-wrap"><img src="https://placehold.co/400?text=Avion" alt="Avion"></div><div class="product-info"><h3 class="product-title">Avión Biplano</h3><p class="product-desc">Maqueta de aviación clásica.</p><span class="product-price">$14.000</span></div></div>
-        <div class="product-card"><div class="product-img-wrap"><img src="https://placehold.co/400?text=Noria" alt="Noria"></div><div class="product-info"><h3 class="product-title">Noria con Movimiento</h3><p class="product-desc">Proyecto mecánico funcional.</p><span class="product-price">$28.000</span></div></div>
-        <div class="product-card"><div class="product-img-wrap"><img src="https://placehold.co/400?text=Mariposa" alt="Mariposa"></div><div class="product-info"><h3 class="product-title">Mariposa Mecánica</h3><p class="product-desc">Engranajes visibles y aleteo simulado.</p><span class="product-price">$22.000</span></div></div>
-        <div class="product-card"><div class="product-img-wrap"><img src="https://placehold.co/400?text=Castillo" alt="Castillo"></div><div class="product-info"><h3 class="product-title">Castillo Medieval</h3><p class="product-desc">Set de juego con puente levadizo.</p><span class="product-price">$30.000</span></div></div>
-        <div class="product-card"><div class="product-img-wrap"><img src="https://placehold.co/400?text=Dragon" alt="Dragon"></div><div class="product-info"><h3 class="product-title">Dragón Articulado</h3><p class="product-desc">Cuerpo flexible que se mueve como serpiente.</p><span class="product-price">$16.000</span></div></div>
-        <div class="product-card"><div class="product-img-wrap"><img src="https://placehold.co/400?text=Piano" alt="Piano"></div><div class="product-info"><h3 class="product-title">Piano de Cola Miniatura</h3><p class="product-desc">Objeto decorativo de alta fidelidad.</p><span class="product-price">$10.000</span></div></div>
+      <div class="brand">
+        <img src="logo.png" alt="Logo Laser Art" class="logo">
+        <div>
+          <strong style="font-size: 1.1rem; font-family: var(--font-title);">Laser Art on Wood</strong><br>
+          <small>Figuras 3D y Maquetas</small>
+        </div>
       </div>
+      <nav>
+        <a href="index.html">Inicio</a>
+        <a href="index.html#categorias">Categorías</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="page-header">
+        <div class="page-breadcrumb">
+          <a href="index.html">Inicio</a> / Categorías /
+        </div>
+        <h1>Figuras Armables / 3D</h1>
+        <p style="color: var(--muted); max-width: 600px; margin: auto;">
+          Puzzles y maquetas de alta precisión para armar y coleccionar.
+        </p>
+      </div>
+
+      <div class="grid-products">
+
+        <div class="product-card">
+          <div class="product-img-wrap" style="background: #fff;">
+            <img src="./armable 1.png" alt="Rifle Sniper" style="object-fit: contain;">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Rifle Sniper</h3>
+            <p class="product-desc">Rifle de francotirador desarmable</p>
+            <span class="product-price">$24.000</span>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrap" style="background: #fff;">
+            <img src="./armable 2.png" alt="Combi Volkswagen" style="object-fit: contain;">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Combi Volkswagen</h3>
+            <p class="product-desc">Auto modelo Volkswagen</p>
+            <span class="product-price">$8.000</span>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrap" style="background: #fff;">
+            <img src="./armable 3.png" alt="One piece Goning Merry" style="object-fit: contain;">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">One piece</h3>
+            <p class="product-desc">Barco Goning Merry</p>
+            <span class="product-price">$15.000</span>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrap" style="background: #fff;">
+            <img src="./armable 4.png" alt="One Piece Piece of Spadille" style="object-fit: contain;">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">One Piece</h3>
+            <p class="product-desc">Barco Piece of Spadille</p>
+            <span class="product-price">$16.000</span>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrap" style="background: #fff;">
+            <img src="./armable 5.png" alt="One Piece The Red Force" style="object-fit: contain;">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">One Piece</h3>
+            <p class="product-desc">Barco The Red Force</p>
+            <span class="product-price">$19.000</span>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrap" style="background: #fff;">
+            <img src="./armable 6.png" alt="One Piece Polar Tang" style="object-fit: contain;">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">One Piece</h3>
+            <p class="product-desc">Barco Polar Tang</p>
+            <span class="product-price">$16.000</span>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrap" style="background: #fff;">
+            <img src="./armable 7.png" alt="Optimus Prime clásico" style="object-fit: contain;">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Optimus Prime clásico</h3>
+            <p class="product-desc">Figura de Transformers</p>
+            <span class="product-price">$13.000</span>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrap" style="background: #fff;">
+            <img src="./armable 8.png" alt="Posavasos Pallet" style="object-fit: contain;">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Posavasos Pallet</h3>
+            <p class="product-desc">Set de 6 posavasos</p>
+            <span class="product-price">$6.000</span>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrap" style="background: #fff;">
+            <img src="./armable 9.png" alt="Maquina de coser" style="object-fit: contain;">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Maquina de coser</h3>
+            <p class="product-desc">Adorno</p>
+            <span class="product-price">Desde $2.000</span>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrap" style="background: #fff;">
+            <img src="./armable 10.png" alt="Pistola Llavero" style="object-fit: contain;">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Pistola</h3>
+            <p class="product-desc">Llavero pistola personalizable</p>
+            <span class="product-price">$3.000</span>
+          </div>
+        </div>
+
+      </div> 
     </main>
-    <footer>Laser Art on Wood · Catálogo Web</footer>
+
+    <footer id="contacto">
+      Laser Art on Wood · Catálogo Web 2023
+    </footer>
+
   </div>
+
+  <div id="visor" onclick="cerrarVisor()">
+    <img id="imagenGrande" src="" onclick="event.stopPropagation()">
+  </div>
+
+  <script>
+    const imagenes = document.querySelectorAll('.product-img-wrap img');
+    const visor = document.getElementById('visor');
+    const imagenGrande = document.getElementById('imagenGrande');
+
+    imagenes.forEach(img => {
+      img.addEventListener('click', () => {
+        visor.style.display = 'flex';
+        imagenGrande.src = img.src;
+      });
+    });
+
+    function cerrarVisor() {
+      visor.style.display = 'none';
+    }
+  </script>
+
 </body>
 </html>
